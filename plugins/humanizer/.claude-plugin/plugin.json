@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "humanizer",
+  "version": "2.7.0",
+  "description": "Убирает признаки AI-генерации из текста (Wikipedia 'Signs of AI writing') + русские правила R1–R9: длинное тире, ёлочки «», канцелярит, рунглиш под аудиторию. Форк blader/humanizer с русской адаптацией.",
+  "author": {
+    "name": "SVS696",
+    "url": "https://github.com/SVS696"
+  },
+  "homepage": "https://github.com/SVS696/humanizer",
+  "repository": "https://github.com/SVS696/humanizer",
+  "license": "MIT",
+  "keywords": ["humanizer", "writing", "ai-detection", "editing", "russian", "ru"]
+}

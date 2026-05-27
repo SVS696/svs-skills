@@ -64,6 +64,15 @@
       "category": "productivity",
       "keywords": ["zenmoney", "finance", "budgets", "transactions", "mcp", "ru"],
       "license": "MIT"
+    },
+    {
+      "name": "humanizer",
+      "source": "./plugins/humanizer",
+      "description": "Убирает признаки AI-генерации из текста (Wikipedia 'Signs of AI writing') + русские правила R1–R9: длинное тире, ёлочки «», канцелярит, рунглиш под аудиторию. Форк blader/humanizer с русской адаптацией.",
+      "version": "2.7.0",
+      "category": "productivity",
+      "keywords": ["humanizer", "writing", "ai-detection", "editing", "russian", "ru"],
+      "license": "MIT"
     }
   ]
 }

@@ -16,6 +16,7 @@
 /plugin install cli-agents@svs
 /plugin install singularity-app@svs
 /plugin install zenmoney@svs
+/plugin install humanizer@svs
 ```
 
 Или вне сессии:
@@ -34,6 +35,7 @@ claude plugin install simplicity@svs
 | **cli-agents** | `/cli-agents:cli-agents` | Прямой вызов CLI-моделей (Gemini / Codex / Claude) + multi-agent council (panel/debate). Нужны установленные CLI провайдеров |
 | **singularity-app** | `/singularity-app:singularity` | Клиент [Singularity App](https://singularity-app.com) API (задачи, проекты, привычки, kanban). Токен в `~/.config/singularity-app/config.json` |
 | **zenmoney** | `/zenmoney:zenmoney` | Управление финансами через ZenMoney API. Карта инструментов поверх MCP-сервера [SVS696/zenmoney-mcp](https://github.com/SVS696/zenmoney-mcp) (ставится отдельно) |
+| **humanizer** | `/humanizer:humanizer` | Убирает признаки AI-генерации из текста + русские правила R1–R9 (тире, ёлочки «», канцелярит, рунглиш). Форк [blader/humanizer](https://github.com/blader/humanizer) → [SVS696/humanizer](https://github.com/SVS696/humanizer) с русской адаптацией |
 
 После установки скиллы вызываются явно через `/plugin:skill` или подхватываются
 моделью автоматически по описанию.
@@ -48,9 +50,11 @@ claude plugin install simplicity@svs
   [`simplicity-skills`](https://github.com/SVS696/simplicity-skills),
   [`cli-agents`](https://github.com/SVS696/cli-agents),
   [`singularity-skill`](https://github.com/SVS696/singularity-skill).
-- **Вендорингом** (`source: ./plugins/<имя>`) — когда скилл это лёгкая дока, а
-  его «домашний» репозиторий — тяжёлый проект (Python/MCP), который незачем
-  тянуть целиком. Так подключены `vidscribe` и `zenmoney`.
+- **Вендорингом** (`source: ./plugins/<имя>`) — когда «домашний» репозиторий
+  лучше не трогать: либо это тяжёлый проект (Python/MCP), который незачем тянуть
+  целиком (`vidscribe`, `zenmoney`), либо это форк, который надо держать чистым
+  для синхронизации с апстримом (`humanizer` — форк blader/humanizer). Скилл
+  копируется в `plugins/<имя>/skills/<имя>/SKILL.md`.
 
 ## Обновление
 
