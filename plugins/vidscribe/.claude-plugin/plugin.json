@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "vidscribe",
+  "version": "0.2.0",
+  "description": "Локальная транскрипция видео и встреч через CLI vidscribe.",
+  "author": {
+    "name": "SVS696",
+    "url": "https://github.com/SVS696"
+  },
+  "homepage": "https://github.com/SVS696/vidscribe",
+  "repository": "https://github.com/SVS696/vidscribe",
+  "license": "MIT",
+  "keywords": ["transcription", "whisper", "video", "meetings", "diarization"]
+}

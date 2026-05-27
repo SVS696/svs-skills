@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
+  "name": "svs",
+  "owner": {
+    "name": "SVS696",
+    "email": "vsamorodov96@gmail.com",
+    "url": "https://github.com/SVS696"
+  },
+  "description": "Личный набор Claude Code скиллов от SVS696: проходы на простоту (анти-оверинжиниринг) и локальная транскрипция видео. Ставится одной командой /plugin marketplace add SVS696/svs-skills.",
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "simplicity",
+      "source": {
+        "source": "github",
+        "repo": "SVS696/simplicity-skills"
+      },
+      "description": "Два прохода на простоту: simplicity-spec (ТЗ / архитектура / инфраструктура) и simplicity-code (код). Ловят и убирают переусложнение СУТИ решения до того, как пользователь увидит результат.",
+      "version": "1.1.0",
+      "category": "productivity",
+      "keywords": ["simplicity", "overengineering", "architecture", "code-review", "ru"],
+      "license": "MIT"
+    },
+    {
+      "name": "vidscribe",
+      "source": "./plugins/vidscribe",
+      "description": "Локальная транскрипция видео и встреч через CLI vidscribe (ffmpeg + faster-whisper + pyannote, коррекция через claude / codex / ollama). Скилл = дока к CLI, сам CLI ставится отдельно.",
+      "version": "0.2.0",
+      "category": "productivity",
+      "keywords": ["transcription", "whisper", "video", "meetings", "diarization", "ru"],
+      "license": "MIT"
+    }
+  ]
+}
