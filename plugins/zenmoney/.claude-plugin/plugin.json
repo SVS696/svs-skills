@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "zenmoney",
+  "version": "1.0.0",
+  "description": "Управление личными финансами через ZenMoney API (счета, транзакции, бюджеты, напоминания, аналитика). Документирует инструменты MCP-сервера zenmoney-mcp.",
+  "author": {
+    "name": "SVS696",
+    "url": "https://github.com/SVS696"
+  },
+  "homepage": "https://github.com/SVS696/zenmoney-mcp",
+  "repository": "https://github.com/SVS696/zenmoney-mcp",
+  "license": "MIT",
+  "keywords": ["zenmoney", "finance", "budgets", "transactions", "mcp"]
+}

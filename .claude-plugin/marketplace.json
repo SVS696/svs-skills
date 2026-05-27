@@ -6,7 +6,7 @@
     "email": "vsamorodov96@gmail.com",
     "url": "https://github.com/SVS696"
   },
-  "description": "Личный набор Claude Code скиллов от SVS696: проходы на простоту (анти-оверинжиниринг) и локальная транскрипция видео. Ставится одной командой /plugin marketplace add SVS696/svs-skills.",
+  "description": "Личный набор Claude Code скиллов от SVS696: проходы на простоту (анти-оверинжиниринг), локальная транскрипция видео, мульти-модельный CLI-council, клиенты Singularity App и ZenMoney. Ставится одной командой /plugin marketplace add SVS696/svs-skills.",
   "metadata": {
     "pluginRoot": "./plugins"
   },
@@ -30,6 +30,39 @@
       "version": "0.2.0",
       "category": "productivity",
       "keywords": ["transcription", "whisper", "video", "meetings", "diarization", "ru"],
+      "license": "MIT"
+    },
+    {
+      "name": "cli-agents",
+      "source": {
+        "source": "github",
+        "repo": "SVS696/cli-agents"
+      },
+      "description": "Прямой вызов CLI-моделей (Gemini / Codex / Claude) без MCP-оверхеда + multi-agent council (panel/debate). Для code review, большого контекста и мульти-модельного консенсуса. Требует установленные CLI провайдеров.",
+      "version": "2.1.0",
+      "category": "productivity",
+      "keywords": ["cli", "gemini", "codex", "claude", "code-review", "multi-agent", "council"],
+      "license": "MIT"
+    },
+    {
+      "name": "singularity-app",
+      "source": {
+        "source": "github",
+        "repo": "SVS696/singularity-skill"
+      },
+      "description": "Клиент Singularity App REST API: задачи, проекты, привычки, kanban, заметки, тайм-трекинг. Требует API-токен в ~/.config/singularity-app/config.json.",
+      "version": "1.2.1",
+      "category": "productivity",
+      "keywords": ["singularity-app", "tasks", "projects", "habits", "kanban", "productivity"],
+      "license": "MIT"
+    },
+    {
+      "name": "zenmoney",
+      "source": "./plugins/zenmoney",
+      "description": "Управление личными финансами через ZenMoney API (счета, транзакции, бюджеты, напоминания, аналитика). Документирует инструменты MCP-сервера zenmoney-mcp, который ставится отдельно.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": ["zenmoney", "finance", "budgets", "transactions", "mcp", "ru"],
       "license": "MIT"
     }
   ]
