@@ -50,8 +50,8 @@
         "source": "github",
         "repo": "SVS696/singularity-skill"
       },
-      "description": "Клиент Singularity App REST API: задачи, проекты, привычки, kanban, заметки, тайм-трекинг. Требует API-токен в ~/.config/singularity-app/config.json.",
-      "version": "1.2.1",
+      "description": "Клиент Singularity App REST API: задачи, проекты, привычки, kanban, заметки, тайм-трекинг (64 инструмента). Требует API-токен в ~/.config/singularity-app/config.json.",
+      "version": "1.5.2",
       "category": "productivity",
       "keywords": ["singularity-app", "tasks", "projects", "habits", "kanban", "productivity"],
       "license": "MIT"
