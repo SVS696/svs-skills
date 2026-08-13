@@ -32,7 +32,7 @@ claude plugin install simplicity@svs
 |--------|--------|------------|
 | **simplicity** | `/simplicity:simplicity-spec`, `/simplicity:simplicity-code` | Проходы на простоту — ловят переусложнение в ТЗ/архитектуре/инфре и в коде до того, как результат уйдёт пользователю |
 | **vidscribe** | `/vidscribe:vidscribe` | Локальная транскрипция видео и встреч (faster-whisper + pyannote + CLI-коррекция). Скилл = дока к CLI; сам CLI ставится из [SVS696/vidscribe](https://github.com/SVS696/vidscribe) |
-| **cli-agents** | `/cli-agents:cli-agents` | Прямой вызов CLI-моделей (Gemini / Codex / Claude) + multi-agent council (panel/debate). Нужны установленные CLI провайдеров |
+| **cli-agents** | `/cli-agents:cli-agents` | Внешние Claude и Codex CLI для независимого review, дискуссий и multi-model council. Read-only по умолчанию; Gemini опционален |
 | **singularity-app** | `/singularity-app:singularity` | Клиент [Singularity App](https://singularity-app.com) API (задачи, проекты, привычки, kanban). Токен в `~/.config/singularity-app/config.json` |
 | **zenmoney** | `/zenmoney:zenmoney` | Управление финансами через ZenMoney API. Карта инструментов поверх MCP-сервера [SVS696/zenmoney-mcp](https://github.com/SVS696/zenmoney-mcp) (ставится отдельно) |
 | **humanizer** | `/humanizer:humanizer` | Убирает признаки AI-генерации из текста + русские правила R1–R9 (тире, ёлочки «», канцелярит, рунглиш). Форк [blader/humanizer](https://github.com/blader/humanizer) → [SVS696/humanizer](https://github.com/SVS696/humanizer) с русской адаптацией |

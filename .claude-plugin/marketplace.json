@@ -38,8 +38,8 @@
         "source": "github",
         "repo": "SVS696/cli-agents"
       },
-      "description": "Прямой вызов CLI-моделей (Gemini / Codex / Claude) без MCP-оверхеда + multi-agent council (panel/debate). Для code review, большого контекста и мульти-модельного консенсуса. Требует установленные CLI провайдеров.",
-      "version": "2.1.0",
+      "description": "Внешние Claude и Codex CLI для независимого review, дискуссий и multi-model council. Read-only по умолчанию; Gemini опционален.",
+      "version": "3.0.0",
       "category": "productivity",
       "keywords": ["cli", "gemini", "codex", "claude", "code-review", "multi-agent", "council"],
       "license": "MIT"
