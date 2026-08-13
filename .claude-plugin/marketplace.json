@@ -38,8 +38,8 @@
         "source": "github",
         "repo": "SVS696/cli-agents"
       },
-      "description": "Внешние Claude и Codex CLI для независимого review, дискуссий и multi-model council. Read-only по умолчанию; Gemini опционален.",
-      "version": "3.0.0",
+      "description": "Внешние Claude и Codex CLI для изолированного review, дискуссий и multi-model council. Read-only по умолчанию, есть live stream; Gemini опционален.",
+      "version": "3.0.1",
       "category": "productivity",
       "keywords": ["cli", "gemini", "codex", "claude", "code-review", "multi-agent", "council"],
       "license": "MIT"
