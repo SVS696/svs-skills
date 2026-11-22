@@ -5,8 +5,6 @@ description: Rewrite or check English technical documentation, requirements, pro
 
 # Simplified Technical English
 
-For “check whether operators still have permission,” report findings about the supplied text. For “rewrite this procedure for an operator,” deliver the revised procedure in English. A request to implement an API that mentions an English field name does not require a language check. Keep the audience and the requested scope of the edit.
-
 Use the source text, the intended reader, and any supplied contract or glossary. The files in this folder support an offline edit. For a translation, use the source in its original language to check the English result.
 
 ## Choose the result
