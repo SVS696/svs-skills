@@ -2,7 +2,11 @@
 
 Use Part 2 of the applicable ASD edition for a formal STE decision. The official local file, its fingerprint and its page ranges are listed in [Sources and local originals](sources.md). The product contract, interface or terminology database defines project names. The working vocabulary below supplies candidate meanings for an adapted software document. A project owner can choose a different term or meaning.
 
-## Look up a word in Issue 9
+## Everyday term choice
+
+Use the term from the product, the API or the team's glossary. Preserve a button label such as **Empty queue** exactly. In an ordinary procedure, “Select **Empty queue**” tells the reader what to do. A word’s status in the ASD dictionary does not change the interface label. Consult the working glossary below only when it helps distinguish concepts in the source.
+
+## Formal lookup in Issue 9
 
 1. Read the whole clause. Write down the meaning and the part of speech needed here. For a verb, identify the subject and action. For a noun, identify the thing it names.
 2. Open Part 2. Read the introductory key when needed, then find the headword in the alphabetical entries. Read *all* entries for that spelling. An uppercase headword identifies an approved entry. A lowercase headword directs the writer to alternatives. A match in an example or in the change history does not establish approval.
@@ -14,7 +18,7 @@ Use Part 2 of the applicable ASD edition for a formal STE decision. The official
 
 ## Working glossary for software documents
 
-Use these original entries when the project defines the same behavior. Each example illustrates the stated sense. Confirm the sense with the product source before applying it to a real system.
+These examples illustrate possible software meanings. Use the project’s wording and behavior. Sample numbers, roles, storage rules, responses and side effects apply only to their examples.
 
 | Term | Part of speech | Meaning in this example | Example |
 |---|---|---|---|
@@ -55,6 +59,6 @@ Use these original entries when the project defines the same behavior. Each exam
 | validate | verb | Apply named acceptance rules to an input | The server validates the date against the schema. |
 | version | noun | Distinct revision identified by the project | Save the version that the operator approved. |
 
-### Record a local decision
+### If the assignment includes glossary maintenance
 
-A term record needs the canonical spelling, part of speech, definition and source. Add the approved abbreviation or alias if readers encounter it. A new project's proposed term stays provisional until the responsible source establishes it. For example, `job_id` can identify a job while `request_id` identifies a request to create or inspect one. Merge those terms only when the contract explicitly identifies the same object.
+An entry in a maintained project glossary needs the canonical spelling, part of speech, definition and source. Add the approved abbreviation or alias if readers encounter it. A new project's proposed term stays provisional until the responsible source establishes it. For example, `job_id` can identify a job while `request_id` identifies a request to create or inspect one. Merge those terms only when the contract explicitly identifies the same object.

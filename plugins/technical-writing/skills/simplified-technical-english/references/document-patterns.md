@@ -1,12 +1,16 @@
 # Patterns for project documents
 
-Choose the pattern that fits the reader's task. These patterns extend the adapted language profile for software teams. EARS, BCP 14 and ISO/IEC/IEEE 29148 serve different purposes. A document can use one without adopting the others. [Sources](sources.md)
+Use the ticket, API note, decision or procedure that the project already expects. When an applicable contract or a user request names a convention, follow it in the part it governs. The optional extensions below show the effect of that choice. [Sources](sources.md)
 
-## System requirements and acceptance
+## Analyst tickets and acceptance
 
 For a requirement, retain the responsible component, trigger or current state, force of the statement, observable result and exceptions. Separate the reason from required behavior. Split independently testable obligations. Keep changes together if the source requires one atomic outcome. Check time origin, units, inclusive bounds, the scope of “each” and any time limit.
 
-The following EARS examples use *shall* for a system obligation. Use the project's convention. Keep a permission as a permission.
+For example, “While an import is running, the dashboard shows its progress” is sufficient for a ticket with that stated change. A tester can start an import and read the dashboard. Add acceptance criteria when the reader needs them or the project requires them. Use the conditions the source provides. For “less than 5 MiB,” exactly 5 MiB is outside the allowed range. This alone does not specify an error message, a status code, or an alert.
+
+## When the project requests EARS
+
+Use these patterns when the project or user selects EARS for system requirements. They apply to the requirements in scope. Use ordinary prose in a surrounding ticket or explanation unless the project extends the convention there. In these EARS examples, *shall* expresses a system obligation. A permission keeps its original force.
 
 | Pattern | Use it when | Example |
 |---|---|---|
@@ -17,23 +21,25 @@ The following EARS examples use *shall* for a system obligation. Use the project
 | Optional feature | The obligation applies to systems with a stated feature | Where batch export is available, the client shall display the batch size. |
 | Combined | The source gives both a state and an event | While the account is locked, when the timer expires, the service shall record the expiry. |
 
-For acceptance, name the initial data and state, the action, and an observable outcome. Test at least one source-defined boundary. For “less than 5 MiB,” a file of exactly 5 MiB is outside the range. Preserve the distinction between a missing outcome and an explicit rejection. An unknown response requires an open question.
+## API changes and protocol specifications
 
-## API and protocol
+Retain exact verbs, paths, codes, header names, casing, nullability and literal examples. Describe differences between a missing field, an empty field and an explicit `null` when the change depends on those states. For a retry, preserve the key, side effects and response specified by the contract. Raise an unspecified detail when it affects the change being described. An unrelated interface detail needs no open question.
 
-Retain exact verbs, paths, codes, header names, casing, nullability and literal examples. Say whether a missing field, an empty field, and an explicit `null` produce different results. For a retry, identify the key, side effects and response the contract promises. If the source specifies only one of those, keep the others open.
+A regular API ticket can say “If the attachment is missing, the server returns `422`” when the source specifies that result. The ticket can keep this sentence even if another service has a protocol specification.
+
+### When the protocol adopts BCP 14
 
 When the document adopts BCP 14, preserve uppercase normative keywords and their strength. An obligation and a prohibition bind the implementer. A recommendation admits justified exceptions. An option leaves a choice to the implementer. A common lowercase modal in an ordinary sentence does not acquire the BCP 14 keyword meaning merely because the contract also uses BCP 14. Do not change case inside a quotation.
 
 ## Architecture and decisions
 
-Record the chosen option, the reason supplied by the source and its scope. Preserve observations and assumptions as distinct statements. “The measured queue reached 180 jobs” records a measurement. “The queue can grow to 1,000 jobs” needs its own evidence or explicit status as an assumption. A reason for choosing a database does not automatically become a permanent restriction on other designs.
+For an actual design decision, record the chosen option, the reason supplied by the source and its scope. Preserve observations and assumptions as distinct statements. “The measured queue reached 180 jobs” records a measurement. “The queue can grow to 1,000 jobs” needs its own evidence or explicit status as an assumption. A reason for choosing a database does not automatically become a permanent restriction on other designs.
 
 ## Procedures and skill instructions
 
-Name the input or initial state. State who acts if the text addresses more than one role. Give the action, expected output, and condition to stop or continue. Keep an exception beside the step it changes. Use exact tool names and paths when the reader needs them.
+Write a procedure when the reader needs to perform an action. A product requirement can simply describe what the system does. For a procedure, name the input or initial state. State who acts if the text addresses more than one role. Give the action, expected output, and condition to stop or continue. Keep an exception beside the step it changes. Use exact tool names and paths when the reader needs them.
 
-Example procedure:
+In this example, a release procedure requires a receipt check.
 
 1. Read the hash from the publication receipt.
 2. Compare it with the hash of the approved article.

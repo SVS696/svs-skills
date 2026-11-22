@@ -2,7 +2,9 @@
 
 IBM EasyEnglish detects grammatical structures that admit more than one interpretation. A checker can expose the readings. The source or a human decision determines which one is correct. Use this method without requiring an IBM tool. The examples below are original. [IBM research and source paper](sources.md)
 
-## Questions that expose a second reading
+## Select an ambiguity that changes behavior
+
+For an ordinary ticket, start with the action a reader would take. If the sentence has one clear reading in project context, keep it. A passive construction, a pronoun or a long label alone does not require a finding. Use one of the following questions when two plausible interpretations change a role, condition, action or result. The table supplies targeted checks and does not add a mandatory review stage.
 
 | Feature | Try both readings | Correction once the source selects a reading |
 |---|---|---|
@@ -16,7 +18,13 @@ IBM EasyEnglish detects grammatical structures that admit more than one interpre
 
 When two readings lead to different actions, report them as alternatives. An edit that selects one without evidence gives the reader a new requirement.
 
-## Check results on normal and boundary cases
+## Worked cases
+
+The examples below use their own source facts. In an ordinary edit, use cases to check the meaning of changed passages. Report a case when it exposes a difference or the reader requests evidence. A separate test plan or reviewer is optional unless the project requires one.
+
+### Ordinary ticket with an exact label
+
+Source: “Following the reopening of a saved report, the continued display of its previously selected filters in **Report filter selection history** is required.” Ticket text: “When a user reopens a saved report, **Report filter selection history** shows the filters saved with that report.” The long label still identifies the correct control. The reader can match the label to the control and check whether the reopened report has the saved filters.
 
 ### Permission, time, and exception
 
@@ -26,11 +34,11 @@ Adapted text: “Only a reviewer may retry a FAILED export. The account must be 
 
 A reviewer with an unlocked account at exactly 30 s has permission. At 29 s the reviewer cannot retry. A locked account or a different role cannot retry even at 31 s. The rule does not require an automatic retry. If the source simply said “after 30 s” and exact equality mattered, query the boundary.
 
-### Protocol and identity
+### A protocol that explicitly adopts BCP 14
 
 Source: “For BCP 14 purposes, a server MUST return the original ID on a repeated request. The client MAY retry.”
 
-Reject an edit that says “The client retries and the server can return the ID.” The edit changes permission to behavior and weakens an obligation. A supported edit is “The client MAY retry. If the request is a repeat, the server MUST return the original ID.” Check the ID from the first request against the ID in the response to a repeat. If the source does not define how the server identifies a repeat, ask for that rule. The source does not establish a response for a new request.
+Reject an edit that says “The client retries and the server can return the ID.” The edit changes permission to behavior and weakens an obligation. A supported edit is “The client MAY retry. If the request is a repeat, the server MUST return the original ID.” Check the ID from the first request against the ID in the response to a repeat. If this change must define repeat detection and the source omits that rule, ask what identifies a repeat. The source does not establish a response for a new request.
 
 ### One transaction
 
@@ -42,6 +50,10 @@ An edit with two independent numbered steps can allow the item to remain after t
 
 Source: “The parser calls the validator after it reads the manifest.” Replacing *it* with *the parser* chooses an actor without evidence. In check mode, report the two actors. Ask “Which component reads the manifest before the call?” In rewrite mode, preserve the uncertainty until the source resolves it.
 
+### A test case that narrows a requirement
+
+Source: “For any other error, show the usual message.” A test that says “For an error with a different code” silently requires a code. An error with no code still falls under the source rule. Preserve the scope in the requirement and in its acceptance criteria.
+
 ### What a check reports
 
-For a substantive finding, identify the location, the original statement, the problem the reader faces and a supported correction or open question. Where applicable, name the dictionary entry or rule. For a strict review, also record the issue, scope, checked exceptions and missing material. A count of short sentences alone cannot verify agreement with the source or official word approval.
+For a substantive finding in an ordinary draft, quote the relevant words, explain the possible change in behavior and suggest a supported correction or question. For a formal STE review, identify the applicable dictionary entry or rule. Record the issue, scope, checked exceptions and missing material. A count of short sentences alone cannot verify agreement with the source or official word approval.

@@ -1,6 +1,16 @@
 # How to write and check a passage
 
-These working checks cover the nine topics in Part 1 of ASD-STE100 Issue 9. Page numbers below count from the PDF cover. Rule numbers identify where to test an exception or check an exact provision. The examples in this guide are original software documentation examples. For a formal review, read the full rule and apply the official dictionary. [Source and edition](sources.md)
+## Everyday technical English
+
+Start with the change the reader needs to understand. Put a condition beside the behavior it controls. Use the same product name throughout the passage. Include a reason, limit or exception when the source establishes it and the reader needs it. Choose sentence length by meaning. Keep a long official label, a clear passive construction or two closely related actions when splitting them would make the behavior harder to follow.
+
+For example, “The **Account recovery verification history** panel shows the last successful check” gives a usable label and observable behavior. Shortening the label could send the reader to the wrong panel. For a ticket about this panel, the acceptance question is whether the result matches the source. Word counts, hazard classifications and dictionary approval belong to a formal review within its declared scope.
+
+## Formal ASD-STE100 review
+
+Use the following nine sections for a passage subject to ASD-STE100 under the request or project contract. The formal limits in this section apply within that scope. A product ticket or online help page can cite a regulated manual without adopting the manual’s style for the whole document.
+
+These working checks cover the nine topics in Part 1 of ASD-STE100 Issue 9. Page numbers below count from the PDF cover. Rule numbers identify where to test an exception or check an exact provision. The examples below illustrate individual checks. Each formal finding needs the applicable rule and the relevant document context. For a formal review, read the full rule and apply the official dictionary. [Source and edition](sources.md)
 
 | Passage or feature | Issue 9 rules | First PDF page |
 |---|---|---|
@@ -22,7 +32,7 @@ Use technical nouns and technical verbs when the term fits an allowed category. 
 
 ### 2. Unpack long compound nouns
 
-For a new noun group, keep the group within three words. Show the relation between its parts with a verb or preposition. To edit “account deletion request approval date,” first determine whether the date records approval of a request or approval of a deletion. A possible result is “the date when the administrator approved the request to delete the account.”
+For a formal Issue 9 review, check a new noun group against the three-word limit and the technical-name provisions in section 2. Show the relation between its parts with a verb or preposition. To edit “account deletion request approval date,” first determine whether the date records approval of a request or approval of a deletion. A possible result is “the date when the administrator approved the request to delete the account.”
 
 Copy an established long technical name exactly on first use. When the context permits, define one shorter form and use it consistently. Keep hyphens that identify meaningful groups. In an interface procedure, preserve the actual control label even when it is long.
 
@@ -46,11 +56,11 @@ For a strict check, limit a procedural sentence to 20 words, counted under secti
 
 ### 6. Explain one topic at a time
 
-Introduce the component before you describe its states or outputs. Repeat the appropriate technical noun as the explanation develops. Put the normal behavior in its own paragraph. Describe each exception beside the behavior it changes. Check that a paragraph covers one subject and that its sentences follow a useful order. For a strict check, the limits are 25 words per descriptive sentence and six sentences per paragraph.
+Introduce the component before you describe its states or outputs. Repeat the appropriate technical noun as the explanation develops. Give the normal behavior and its exceptions enough space for the reader to see which condition governs each result. Check that a paragraph covers one subject and that its sentences follow a useful order. For a strict check, the limits are 25 words per descriptive sentence and six sentences per paragraph.
 
 ### 7. Preserve safety instructions
 
-Use the hazard level and signal word specified by the governing source. Start with the condition or action that protects the reader. Explain the identified harm or consequence. Put the instruction where the reader can act on it before exposure. If the source does not identify the hazard or the applicable level, preserve the available instruction and ask the responsible specialist. An ordinary validation error does not establish a safety hazard.
+Use the hazard level and signal word specified by the governing source. Start with the condition or action that protects the reader. Explain the identified harm or consequence. Put the instruction where the reader can act on it before exposure. For a safety passage whose hazard or level is unclear, keep the original instruction and identify what the responsible specialist needs to confirm. For an ordinary application error, describe the error and the supported recovery.
 
 ### 8. Apply punctuation and counting rules
 

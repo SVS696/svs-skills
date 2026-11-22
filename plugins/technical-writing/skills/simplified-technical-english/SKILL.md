@@ -1,23 +1,25 @@
 ---
 name: simplified-technical-english
-description: Rewrite or check English technical documentation, requirements, procedures, APIs, and skill instructions. Select this skill when the requested output is English, including a technical translation into English. Apply ASD-STE100 and IBM EasyEnglish. Use the specified edition and dictionary when the user requests a formal STE check.
+description: Write, rewrite or check English analyst tickets and technical documents, including translations into English. Use the reader’s project terminology and preserve the source meaning. Also supports formal ASD-STE100 checks when requested or required by the project.
 ---
 
 # Simplified Technical English
 
-Use the source text, the intended reader, and any supplied contract or glossary. The files in this folder support an offline edit. For a translation, use the source in its original language to check the English result.
+For an ordinary analyst ticket, write the change in the team's own English. Name the action, who performs it when that matters, and what a reader can observe. Keep the supplied terms, conditions, exceptions, permissions, reasons, and exact interface text. If the source leaves the actor open, keep the condition without guessing who acted. Preserve whether the change uses an existing component or introduces one. A sentence that the reader can already apply can stay as written.
 
-## Choose the result
+**Example ticket.** Source wording: “Following selection of **Save**, the application undertakes a return to the list. Filters selected by the analyst are retained.” Ticket text: “When the analyst selects **Save**, the app returns to the list with the same filters.” This gives the tester one action and two things to observe. The ticket needs no extra sections.
 
-- **Rewrite.** Return the new text in the requested format. Preserve its structure, identifiers, quotations, code, and links. Edit a file when the user asks for a file edit.
-- **Check.** Leave the input unchanged. Give the location, the rule or source, the effect on the reader, and the smallest supported correction. If the user supplies only a draft, report what you can establish from that draft. A comparison of meaning requires the source.
-- **Rewrite and check.** Return the revised text, then report open decisions or material differences. Give a clean result when the text passes the stated checks.
-- **Formal check.** Identify the issue, the scope, the project terminology, and the exact document version. Check each applicable rule in Part 1 and each applicable word in Part 2 of the full standard. Use the local original if available. If a required item is missing, name it and limit the conclusion to the checks you completed. [Sources and local originals](references/sources.md)
+## Choose the requested output
 
-## Make the edit
+- **Write or rewrite.** Return the text in the requested language, structure, and format. Preserve code, identifiers, project template headings, link targets, UI labels and quoted messages exactly, including strings in another language. Change them if the task calls for that change. Edit a file if requested.
+- **Check.** Leave the input unchanged. Report each substantive issue with its location, its effect on the reader, and a supported correction or question. With a draft alone, assess clarity. To check a change in meaning, compare with the source.
+- **Rewrite and check.** Return the revised text. Add only material unresolved issues or any check results the reader requested.
 
-1. From the source, identify the actor, action, object, trigger, authority and result. Mark limits, exceptions, exact labels and the reason for the rule. Keep any unresolved issue open.
-2. Classify each passage as a procedure, description, safety instruction, or project requirement. Apply the relevant sections of the [writing guide](references/writing.md). Use the [word guide](references/vocabulary.md) to check meaning, part of speech, word form and technical terms.
-3. For a requirement, interface, technical decision or skill, apply the relevant [document pattern](references/document-patterns.md). Draft directly in technical English for the intended reader.
-4. Use the [ambiguity checks](references/ambiguity-and-cases.md) where a reader might derive two behaviors. Resolve each ambiguity from the source. If the evidence permits both readings, show both and ask the smallest question that separates them.
-5. Compare the result with the source. Try one normal case and one meaningful boundary or exception. Record a difference if the actor, allowed action, ordering, data, time, scope, or output changes. Preserve any unknowns. A readable sentence can still change a requirement.
+## Choose the guidance that applies
+
+1. **Everyday technical English.** For a ticket, API change, internal proposal or ordinary procedure, read for meaning. Prefer direct verbs and consistent names. Keep the project's accepted terminology, including long labels. Preserve the difference between an observed fact, a proposed change and a requirement. The [writing guide](references/writing.md) has a short everyday section. The [word guide](references/vocabulary.md) helps when a term has more than one meaning.
+2. **A specific ambiguity.** If two readings would change the action or result, use the [worked cases](references/ambiguity-and-cases.md). Resolve the issue from the source, or ask a focused question. A sentence with a passive verb or a pronoun can be perfectly clear.
+3. **A document convention.** Follow EARS syntax, BCP 14 keywords, a prescribed template, or a safety-message format when the request, source contract or governing project instructions call for it. Apply the convention to the passages it governs. The [document patterns](references/document-patterns.md) give examples. A ticket about an API change can use ordinary English.
+4. **Formal ASD-STE100.** Use this route when the request or governing document explicitly requires compliance or an assessment against a named edition. “Simplify this” and a reference to technical English alone select the everyday route. Confirm the applicable issue and scope. For a formal assessment, check Part 1 and the vocabulary in Part 2, including applicable technical terms. Record the edition, document version and findings. If necessary material is missing, state what remains unverified. [Formal guide](references/writing.md) · [Sources and local originals](references/sources.md)
+
+Before returning the text, compare it with the source. For changed behavior, try the normal case and any material exception or boundary the source supplies. Keep this check brief and internal unless the user asks for evidence or it reveals a problem. Use the same comparison after a readability edit. Keep a decision open only when choosing an answer would change the meaning or the reader's next action.
