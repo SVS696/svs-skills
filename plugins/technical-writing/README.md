@@ -1,0 +1,18 @@
+# Technical writing skills
+
+Select the skill by the language of the deliverable. The language of the request can differ.
+
+| Deliverable | Skill | Local sources |
+|---|---|---|
+| Russian requirements, technical specifications and procedures | [УТР](skills/utr/SKILL.md) | [ГОСТы и прикладной словарь](skills/utr/references/sources.md) |
+| English requirements, technical specifications and procedures | [Simplified Technical English](skills/simplified-technical-english/SKILL.md) | [ASD-STE100 Issue 9, IBM EasyEnglish and BCP 14](skills/simplified-technical-english/references/sources.md) |
+
+Copy either complete skill directory to your skills directory. To add the reference publications to that copy, run `python3 scripts/originals.py` from its root. To verify the files without a network connection, run `python3 scripts/originals.py --check`.
+
+## Authoring and evaluation
+
+Each manifest identifies the requested output language, when to use the skill, how to report a check, and what the reader needs to act. The working guides and examples are inside the skill. A missing source limits the findings that depend on it. These choices apply the [OpenAI Cookbook guidance for skills](https://developers.openai.com/cookbook/examples/skills_in_api#operational-best-practices) and the [GPT-6.2 family prompting guide](https://developers.openai.com/api/docs/guides/latest-model/gpt-6.2-astra.md#prompting-best-practices).
+
+Check a release from a copy of one skill. Request a rewrite and a check on a requirement that grants permission unless a status is HOLD. Verify the actor, modality, timer origin and exception. Repeat with the official publication absent. A formal finding must identify the missing evidence. Also try a request to implement an API without writing documentation. Neither language skill applies to that request.
+
+On 22 November 2026, separate read-only runs of GPT-6.2 Sol and GPT-6.2 Astra completed the same three cases. Each model selected the Russian skill for checking a Russian requirement and the English skill for a translation requested in Russian. Both preserved the permission to retry at 30 seconds after a response and the prohibition in HOLD. Both declined to assert formal STE compliance without the publisher PDF. Neither selected a language skill for implementing a numeric sorter.

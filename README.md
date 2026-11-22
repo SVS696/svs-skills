@@ -12,6 +12,7 @@
 
 ```text
 /plugin install simplicity@svs
+/plugin install technical-writing@svs
 /plugin install vidscribe@svs
 /plugin install cli-agents@svs
 /plugin install singularity-app@svs
@@ -25,6 +26,10 @@
 claude plugin marketplace add SVS696/svs-skills
 claude plugin install simplicity@svs
 ```
+
+## Технический язык
+
+Для русского документа используйте [УТР](plugins/technical-writing/skills/utr/SKILL.md). Для английского — [Simplified Technical English и IBM EasyEnglish](plugins/technical-writing/skills/simplified-technical-english/SKILL.md). В Codex можно установить любой из них отдельно: скопируйте его каталог целиком в `~/.agents/skills/`. Из корня установленного скилла выполните `python3 scripts/originals.py`, чтобы получить проверенные издания для личного чтения. Для работы без сети перенесите папку скилла вместе с `references/originals/`.
 
 ## Что внутри
 
