@@ -15,6 +15,8 @@ FILES = (
      "https://aclanthology.org/A97-1024.pdf"),
     ("Bernth-CLAW-1998.pdf", "7e2fadc9f5cd72444e9b7beb8d0e94c8d5c165d801ceb9a0fc60e90f59f59b33",
      "https://mt-archive.net/90/CLAW-1998-Bernth.pdf"),
+    ("OBrien-CLT-2003.pdf", "730a65ff45a5d1a2845850d780f77ae2dde47c10ea605094f7306a7be670664f",
+     "https://mt-archive.net/00/CLT-2003-Obrien.pdf"),
     ("ISO-IEC-IEEE-29148-2018.pdf", "27c8f1f355985a902dd4d1467ff1823e8102fdb35e8832232c4121b307d70450",
      "https://byui-cse.github.io/cse372-course/Reading/CSE372Week10-IEEE.pdf"),
     ("RFC2119.txt", "3c2ceb7bfc84cd34720f4a5271338ab9d8280d34bdd1eb250c64306202f2ed8b",

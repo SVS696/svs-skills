@@ -20,6 +20,10 @@ This CLAW workshop paper shows how English wording affects machine translation. 
 
 This is a reading note based on the public abstract. The publisher lists the chapter on pages 164–173. The full chapter requires access to the proceedings. Bernth describes how the checker offers different rewrites when grammar permits more than one interpretation. For example, in “review cached requests and responses,” *cached* could describe only requests or both groups. Ask which items are cached before choosing the wording. This example was written for the skill. [Publisher record](https://doi.org/10.1007/3-540-49478-2_16) · [ACL abstract](https://aclanthology.org/1998.amta-papers.15/)
 
+## Comparing controlled languages
+
+Sharon O’Brien compared eight sets of writing rules, including AECMA Simplified English and IBM Easy English. All eight favored short sentences. Some set word limits, and others gave qualitative guidance. Section 4 separates rules shared by all eight from rules shared by at least four. Appendix A gives the author’s proposed starting set. For a formal check, apply the edition named by the project. [CLT 2003 paper](https://mt-archive.net/00/CLT-2003-Obrien.pdf)
+
 ## Requirements and protocols
 
 ISO/IEC/IEEE 29148:2018 covers requirements engineering. Use its applicable provisions when the project adopts that standard. The local reading copy in `standards/ISO-IEC-IEEE-29148-2018.md` uses the November 2018 second edition available in the BYU–Idaho course. Its 104 PDF pages include the front matter, three annexes and bibliography. The local copy keeps the university license notices. [Course PDF](https://byui-cse.github.io/cse372-course/Reading/CSE372Week10-IEEE.pdf) EARS supplies patterns for requirements when the user or project selects that notation. The examples in this skill explain how to use the patterns offline. [ISO catalogue](https://www.iso.org/standard/72089.html) · [EARS guide by Alistair Mavin](https://alistairmavin.com/ears/)
@@ -40,3 +44,4 @@ The installer writes Markdown, illustrations and checksum receipts to `standards
 | `RFC8174.txt` | `5ca0e2f90be0bc5928ee465f76518fee316dfa775aed885658a29a419cc293b7` |
 | `ISO-IEC-IEEE-29148-2018.pdf` | `27c8f1f355985a902dd4d1467ff1823e8102fdb35e8832232c4121b307d70450` |
 | `Bernth-CLAW-1998.pdf` | `7e2fadc9f5cd72444e9b7beb8d0e94c8d5c165d801ceb9a0fc60e90f59f59b33` |
+| `OBrien-CLT-2003.pdf` | `730a65ff45a5d1a2845850d780f77ae2dde47c10ea605094f7306a7be670664f` |

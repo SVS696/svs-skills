@@ -28,6 +28,7 @@ Before returning the text, compare it with the source. For changed behavior, try
 
 - For a formal check against ASD-STE100 Issue 9, use [Part 1, writing rules (page 43)](standards/ASD-STE100_ISSUE9.md#page-43) and [Part 2, dictionary (page 129)](standards/ASD-STE100_ISSUE9.md#page-129). For a word lookup, go directly to the [alphabetical entries (page 149)](standards/ASD-STE100_ISSUE9.md#page-149).
 - For the basis of the IBM EasyEnglish ambiguity checks, see [Bernth’s 1997 paper](standards/Bernth-EasyEnglish-1997.md). For examples of editing English before machine translation, use the [1998 CLAW paper](standards/Bernth-CLAW-1998.md). A [reading note on the 1998 AMTA chapter](references/sources.md#bernth-1998--easyenglish-addressing-structural-ambiguity) covers the public abstract.
+- To compare controlled languages, see [O’Brien’s study of eight rule sets](standards/OBrien-CLT-2003.md). Its findings describe the editions studied in 2003.
 - When the project adopts requirements engineering practices from [ISO/IEC/IEEE 29148:2018](standards/ISO-IEC-IEEE-29148-2018.md), check the applicable clauses in that edition.
 - If the protocol uses BCP 14, see [RFC 2119](standards/RFC2119.md) and [RFC 8174](standards/RFC8174.md).
 

@@ -194,6 +194,47 @@ def claw_pages(path):
             yield "\n\n".join(paragraphs)
 
 
+def obrien_pages(path):
+    """Read the two columns in order and retain the author's table cells."""
+    import pymupdf
+
+    def prose(page, area):
+        if area.is_empty:
+            return []
+        paragraphs = []
+        for block in page.get_text("blocks", clip=area, sort=True):
+            lines = [s.strip() for s in block[4].splitlines() if s.strip()]
+            text = " ".join(lines).replace("x\\x03", "•").replace("\\x03", "")
+            if text:
+                paragraphs.append(html.escape(text, quote=False))
+        return paragraphs
+
+    with pymupdf.open(path) as doc:
+        if len(doc) != 10:
+            raise ValueError("Expected the ten-page CLT paper.")
+        for page in doc:
+            top = 234 if page.number == 0 else 0
+            parts = prose(page, pymupdf.Rect(0, 0, page.rect.width, top))
+            tables = page.find_tables().tables
+            for left, right in [(0, 306), (306, page.rect.width)]:
+                y = top
+                for table in sorted(tables, key=lambda t: t.bbox[1]):
+                    x0, y0, x1, y1 = table.bbox
+                    if not left < (x0 + x1) / 2 < right:
+                        continue
+                    parts.extend(prose(page, pymupdf.Rect(left, y, right, y0)))
+                    rows = [[html.escape(" ".join((v or "").split()), quote=False).replace("|", "&#124;")
+                             for v in row] for row in table.extract()]
+                    # A continuation can start with data. Do not style that row as a heading.
+                    if rows[0][0].lower() not in {"sub-category", "cl", "controlled language"}:
+                        rows.insert(0, [""] * table.col_count)
+                    rows.insert(1, ["---"] * table.col_count)
+                    parts.append("\n".join("| " + " | ".join(row) + " |" for row in rows))
+                    y = y1
+                parts.extend(prose(page, pymupdf.Rect(left, y, right, page.rect.height)))
+            yield "\n\n".join(parts)
+
+
 def iso_pages(path, output):
     import pymupdf
 
@@ -260,6 +301,9 @@ def build(path, output, url):
         if is_ste:
             title = "ASD-STE100 Simplified Technical English, Issue 9"
             pages = ste_pages(path, output)
+        elif path.stem == "OBrien-CLT-2003":
+            title = "Controlling Controlled English: An Analysis of Several Controlled Language Rule Sets"
+            pages = obrien_pages(path)
         elif path.stem == "Bernth-CLAW-1998":
             title = "EasyEnglish: Preprocessing for MT"
             pages = claw_pages(path)
