@@ -29,7 +29,7 @@ claude plugin install simplicity@svs
 
 ## Технический язык
 
-Для русского документа используйте [УТР](plugins/technical-writing/skills/utr/SKILL.md). Для английского — [Simplified Technical English и IBM EasyEnglish](plugins/technical-writing/skills/simplified-technical-english/SKILL.md). В Codex можно установить любой из них отдельно: скопируйте его каталог целиком в `~/.agents/skills/`. Из корня установленного скилла выполните `python3 scripts/originals.py`, чтобы получить проверенные издания для личного чтения. Для работы без сети перенесите папку скилла вместе с `references/originals/`.
+Для русского документа используйте [УТР](plugins/technical-writing/skills/utr/SKILL.md). Для английского — [Simplified Technical English и IBM EasyEnglish](plugins/technical-writing/skills/simplified-technical-english/SKILL.md). В Codex можно установить любой из них отдельно: скопируйте его каталог целиком в `~/.agents/skills/`. Из корня установленного скилла выполните `python3 scripts/originals.py`, чтобы получить проверенные издания для личного чтения. Для работы без сети перенесите папку скилла вместе с локальными изданиями: `standards/` для УТР или `references/originals/` для английского.
 
 ## Что внутри
 

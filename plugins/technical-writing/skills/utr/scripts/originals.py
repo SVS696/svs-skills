@@ -6,6 +6,8 @@ import subprocess
 import tempfile
 from pathlib import Path
 
+from gost_markdown import check_copy, convert
+
 # Each entry identifies the exact copy described in references/sources.md.
 FILES = (
     ("GOST-R-58049-2017.pdf", "4f734dc5b1ead2c0e83b837754268947be2365facd277ca46cecf5ffe005e5c5",
@@ -37,31 +39,41 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="Verify without downloading.")
     args = parser.parse_args()
-    destination = Path(__file__).resolve().parents[1] / "references" / "originals"
+    root = Path(__file__).resolve().parents[1]
+    destination = root / "standards"
+    legacy = root / "references" / "originals"
     for name, expected, url in FILES:
         target = destination / name
-        if target.exists():
+        is_pdf = target.suffix == ".pdf"
+        if is_pdf and (destination / f"{target.stem}.json").is_file():
+            check_copy(destination, target.stem, expected)
+        elif not is_pdf and target.is_file():
             if sha256(target) != expected:
-                raise SystemExit(f"{name}: existing file differs from the recorded edition.")
+                raise SystemExit(f"{name}: file differs from the recorded edition.")
         elif args.check:
-            raise SystemExit(f"{name}: file missing.")
+            raise SystemExit(f"{name}: local reading copy missing.")
         else:
             destination.mkdir(parents=True, exist_ok=True)
             with tempfile.TemporaryDirectory(dir=destination) as staging:
-                download = Path(staging) / name
-                subprocess.run(["curl", "--fail", "--location", "--silent", "--show-error",
-                                "--proto", "=https", "--proto-redir", "=https",
-                                "--max-time", "120", "--retry", "1",
-                                "--output", str(download), url], check=True)
-                if sha256(download) != expected:
-                    raise SystemExit(f"{name}: download differs from the recorded edition.")
-                # The link publishes a complete file without replacing a concurrent install.
-                try:
-                    target.hardlink_to(download)
-                except FileExistsError:
-                    if sha256(target) != expected:
-                        raise SystemExit(f"{name}: another installation wrote a different file.")
-        print(f"OK {name}")
+                source = legacy / name
+                if not source.exists():
+                    source = Path(staging) / name
+                    subprocess.run(["curl", "--fail", "--location", "--silent", "--show-error",
+                                    "--proto", "=https", "--proto-redir", "=https",
+                                    "--max-time", "120", "--retry", "1",
+                                    "--output", str(source), url], check=True)
+                if sha256(source) != expected:
+                    raise SystemExit(f"{name}: file differs from the recorded edition.")
+                if is_pdf:
+                    convert(source, destination, url, expected)
+                    check_copy(destination, target.stem, expected)
+                else:
+                    try:
+                        target.hardlink_to(source)
+                    except FileExistsError:
+                        if sha256(target) != expected:
+                            raise SystemExit(f"{name}: another installation wrote a different file.")
+        print(f"OK {target.with_suffix('.md').name if is_pdf else name}")
 
 
 if __name__ == "__main__":

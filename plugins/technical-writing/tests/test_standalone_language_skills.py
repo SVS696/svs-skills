@@ -14,7 +14,7 @@ class StandaloneLanguageSkillTest(unittest.TestCase):
         for name in ("utr", "simplified-technical-english"):
             with self.subTest(skill=name), tempfile.TemporaryDirectory() as tmp:
                 package = Path(tmp).resolve() / name
-                shutil.copytree(skills / name, package, ignore=shutil.ignore_patterns("originals"))
+                shutil.copytree(skills / name, package, ignore=shutil.ignore_patterns("originals", "standards"))
                 entry = package / "SKILL.md"
                 visited = set()
                 pending = [entry]

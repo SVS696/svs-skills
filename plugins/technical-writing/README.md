@@ -7,7 +7,7 @@ Select the skill by the language of the deliverable. The language of the request
 | Russian requirements, technical specifications and procedures | [УТР](skills/utr/SKILL.md) | [ГОСТы и прикладной словарь](skills/utr/references/sources.md) |
 | English requirements, technical specifications and procedures | [Simplified Technical English](skills/simplified-technical-english/SKILL.md) | [ASD-STE100 Issue 9, IBM EasyEnglish and BCP 14](skills/simplified-technical-english/references/sources.md) |
 
-Copy either complete skill directory to your skills directory. To add the reference publications to that copy, run `python3 scripts/originals.py` from its root. To verify the files without a network connection, run `python3 scripts/originals.py --check`.
+Copy either complete skill directory to your skills directory. To add the reference publications to that copy, run `python3 scripts/originals.py` from its root. The Russian skill builds searchable Markdown in `standards/` with editable Markdown tables and HTML tables for merged cells. Install Poppler, Pillow, PyMuPDF, NumPy and opencv-python-headless to build these files. To verify the files without a network connection, run `python3 scripts/originals.py --check`.
 
 ## Authoring and evaluation
 
