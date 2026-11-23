@@ -4,7 +4,7 @@
 
 ## Редакторские статьи
 
-Инна Якименко. «Как писать кратко и понятно». ПроТекст, 10 января 2014 года. Статья послужила источником шести [правил редактуры](../sources/protext-2014-kak-pisat-kratko-i-ponyatno.md). В личной установке копия статьи хранится в `sources/protext-2014-kak-pisat-kratko-i-ponyatno.md`. [Публикация ПроТекста](https://protext.su/pro/kak-pisat-kratko-i-ponyatno/)
+Инна Якименко. «Как писать кратко и понятно». ПроТекст, 10 января 2014 года. [Шесть правил с пояснениями и примерами](../sources/protext-2014-kak-pisat-kratko-i-ponyatno.md). [Публикация ПроТекста](https://protext.su/pro/kak-pisat-kratko-i-ponyatno/)
 
 ## Выбор документа
 
