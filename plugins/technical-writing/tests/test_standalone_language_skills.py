@@ -24,7 +24,7 @@ class StandaloneLanguageSkillTest(unittest.TestCase):
                     originals = {package / "standards" / Path(f).with_suffix(".md" if f.endswith(".pdf") else ".txt")
                                  for f in editions}
                 else:
-                    originals = {package / "references/originals" / f for f in editions}
+                    originals = {package / "standards" / Path(f).with_suffix(".md") for f in editions}
                 direct = set()
                 visited = set()
                 pending = [entry]

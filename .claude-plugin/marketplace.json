@@ -15,7 +15,7 @@
       "name": "technical-writing",
       "source": "./plugins/technical-writing",
       "description": "Два самостоятельных скилла для системного аналитика. УТР с ГОСТами и упрощённый технический английский по ASD-STE100 и IBM EasyEnglish.",
-      "version": "1.0.6",
+      "version": "1.0.7",
       "category": "productivity",
       "keywords": ["utr", "ste", "technical-writing", "requirements"]
     },

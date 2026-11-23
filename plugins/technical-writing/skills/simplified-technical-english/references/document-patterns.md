@@ -10,6 +10,8 @@ For example, “While an import is running, the dashboard shows its progress” 
 
 ## When the project requests EARS
 
+EARS stands for Easy Approach to Requirements Syntax. Mavin and colleagues developed it while extracting requirements from regulations. Its patterns help a reader find the condition, the system and its required response in a predictable order. A requirement can have several preconditions, at most one trigger, one named system and one or more responses. In a combined pattern, put the state before the event. [Author’s guide](https://alistairmavin.com/ears/)
+
 Use these patterns when the project or user selects EARS for system requirements. They apply to the requirements in scope. Use ordinary prose in a surrounding ticket or explanation unless the project extends the convention there. In these EARS examples, *shall* expresses a system obligation. A permission keeps its original force.
 
 | Pattern | Use it when | Example |
