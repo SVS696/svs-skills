@@ -16,6 +16,16 @@ class StandaloneLanguageSkillTest(unittest.TestCase):
                 package = Path(tmp).resolve() / name
                 shutil.copytree(skills / name, package, ignore=shutil.ignore_patterns("originals", "standards"))
                 entry = package / "SKILL.md"
+                # The public package lists each optional edition and its source hash.
+                catalogue = (package / "references/sources.md").read_text(encoding="utf-8")
+                editions = re.findall(r"^\| `([^`]+)` \|.*`[a-f0-9]{64}` \|$", catalogue, re.M)
+                self.assertTrue(editions, name)
+                if name == "utr":
+                    originals = {package / "standards" / Path(f).with_suffix(".md" if f.endswith(".pdf") else ".txt")
+                                 for f in editions}
+                else:
+                    originals = {package / "references/originals" / f for f in editions}
+                direct = set()
                 visited = set()
                 pending = [entry]
                 while pending:
@@ -30,9 +40,14 @@ class StandaloneLanguageSkillTest(unittest.TestCase):
                             continue
                         target = (document.parent / unquote(parts.path)).resolve()
                         self.assertTrue(target.is_relative_to(package), (document.name, link))
+                        if document == entry:
+                            direct.add(target)
+                        if target in originals:
+                            continue
                         self.assertTrue(target.is_file(), (document.name, link))
                         if target.suffix == ".md":
                             pending.append(target)
                 references = set((package / "references").glob("*.md"))
                 self.assertTrue(references, name)
-                self.assertFalse(references - visited, f"{name}: unreachable guides {references - visited}")
+                missing = (references | originals) - direct
+                self.assertFalse(missing, f"{name}: missing direct links in SKILL.md: {missing}")
