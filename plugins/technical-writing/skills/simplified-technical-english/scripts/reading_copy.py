@@ -3,6 +3,7 @@
 from collections import defaultdict
 import html
 import re
+import subprocess
 
 
 def descendants(node):
@@ -169,6 +170,30 @@ def bernth_pages(path):
 
 
 
+def claw_pages(path):
+    """Read the 12 scanned pages in the CLAW paper; keep its numbered examples."""
+    import pymupdf
+
+    with pymupdf.open(path) as doc:
+        if len(doc) != 12:
+            raise ValueError("Expected the 12-page CLAW paper.")
+        for page in doc:
+            scan = page.get_pixmap(dpi=300, colorspace=pymupdf.csGRAY)
+            result = subprocess.run(["tesseract", "stdin", "stdout", "-l", "eng", "--dpi", "300"],
+                                    input=scan.tobytes("png"), stdout=subprocess.PIPE, check=True)
+            text = result.stdout.decode("utf-8").strip()
+            if len(text.split()) < 60:
+                raise ValueError(f"Incomplete OCR on CLAW page {page.number + 1}.")
+            paragraphs = []
+            for block in re.split(r"\n\s*\n", text):
+                block = html.escape(block.strip(), quote=False)
+                if block and (block in {"Abstract", "References"} or
+                              re.fullmatch(r"\d+(?:\.\d+)*\.? +[A-Z][^\n]{2,55}", block)):
+                    block = "### " + block
+                paragraphs.append(block)
+            yield "\n\n".join(paragraphs)
+
+
 def iso_pages(path, output):
     import pymupdf
 
@@ -235,6 +260,9 @@ def build(path, output, url):
         if is_ste:
             title = "ASD-STE100 Simplified Technical English, Issue 9"
             pages = ste_pages(path, output)
+        elif path.stem == "Bernth-CLAW-1998":
+            title = "EasyEnglish: Preprocessing for MT"
+            pages = claw_pages(path)
         elif path.stem.startswith("ISO-"):
             title = "ISO/IEC/IEEE 29148:2018 — Requirements engineering"
             pages = iso_pages(path, output)

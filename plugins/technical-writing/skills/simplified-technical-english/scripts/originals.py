@@ -13,6 +13,8 @@ FILES = (
      "https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf"),
     ("Bernth-EasyEnglish-1997.pdf", "fc6bf81bc664f0a223274d940ae5820a4ec5d7d5888d854fbe06e843772310ef",
      "https://aclanthology.org/A97-1024.pdf"),
+    ("Bernth-CLAW-1998.pdf", "7e2fadc9f5cd72444e9b7beb8d0e94c8d5c165d801ceb9a0fc60e90f59f59b33",
+     "https://mt-archive.net/90/CLAW-1998-Bernth.pdf"),
     ("ISO-IEC-IEEE-29148-2018.pdf", "27c8f1f355985a902dd4d1467ff1823e8102fdb35e8832232c4121b307d70450",
      "https://byui-cse.github.io/cse372-course/Reading/CSE372Week10-IEEE.pdf"),
     ("RFC2119.txt", "3c2ceb7bfc84cd34720f4a5271338ab9d8280d34bdd1eb250c64306202f2ed8b",

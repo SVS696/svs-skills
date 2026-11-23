@@ -12,6 +12,10 @@ The local Markdown edition in `standards/ASD-STE100_ISSUE9.md` retains the rules
 
 Arendse Bernth describes a checker that finds structural ambiguity and suggests alternatives. Its examples help a reviewer investigate ambiguous participles, coordination, passive constructions and pronoun reference when a second reading affects the reader. The source describes a research tool. It provides no approved ASD vocabulary or certification process. The local copy in `standards/Bernth-EasyEnglish-1997.md` follows the seven pages of the ANLP paper. The scan has OCR errors. Check exact quotations against the source page. [IBM publication record](https://research.ibm.com/publications/easyenglish-a-tool-for-improving-document-quality) · [1997 paper from ACL Anthology](https://aclanthology.org/A97-1024.pdf) · [1998 paper record](https://aclanthology.org/1998.amta-papers.15/)
 
+### Bernth 1998 — EasyEnglish: Preprocessing for MT
+
+This CLAW workshop paper shows how English wording affects machine translation. Sections 3.1 and 3.2 cover ambiguous attachments, implicit subjects and hyphens. The references on printed page 40 list *EasyEnglish: Addressing Structural Ambiguity* as a separate work then in preparation. The local Markdown copy uses OCR of the 12 scanned pages (printed pages 30–41). Check exact wording, especially the German translation examples, against the linked page image. [CLAW paper](https://mt-archive.net/90/CLAW-1998-Bernth.pdf)
+
 ### Bernth 1998 — EasyEnglish: Addressing Structural Ambiguity
 
 This is a reading note based on the public abstract. The publisher lists the chapter on pages 164–173. The full chapter requires access to the proceedings. Bernth describes how the checker offers different rewrites when grammar permits more than one interpretation. For example, in “review cached requests and responses,” *cached* could describe only requests or both groups. Ask which items are cached before choosing the wording. This example was written for the skill. [Publisher record](https://doi.org/10.1007/3-540-49478-2_16) · [ACL abstract](https://aclanthology.org/1998.amta-papers.15/)
@@ -24,7 +28,7 @@ RFC 2119 (March 1997) defines requirement levels for specifications that adopt i
 
 ## Restore or verify optional originals
 
-From the skill directory, run `uv run --with pdfplumber==0.11.11 --with pymupdf==1.27.2.3 python scripts/originals.py`. If these packages are already installed, run `python3 scripts/originals.py`. The command needs curl to download missing editions. It verifies each source against the table below. It can reuse originals from an earlier installation.
+From the skill directory, run `uv run --with pdfplumber==0.11.11 --with pymupdf==1.27.2.3 python scripts/originals.py`. If these packages are already installed, run `python3 scripts/originals.py`. Install Tesseract with English language data to convert the CLAW scan. The command needs curl to download missing editions. It verifies each source against the table below. It can reuse originals from an earlier installation.
 
 The installer writes Markdown, illustrations and checksum receipts to `standards/`. Copy this directory with the skill for offline use. To verify a copy offline, run `python3 scripts/originals.py --check`.
 
@@ -35,3 +39,4 @@ The installer writes Markdown, illustrations and checksum receipts to `standards
 | `RFC2119.txt` | `3c2ceb7bfc84cd34720f4a5271338ab9d8280d34bdd1eb250c64306202f2ed8b` |
 | `RFC8174.txt` | `5ca0e2f90be0bc5928ee465f76518fee316dfa775aed885658a29a419cc293b7` |
 | `ISO-IEC-IEEE-29148-2018.pdf` | `27c8f1f355985a902dd4d1467ff1823e8102fdb35e8832232c4121b307d70450` |
+| `Bernth-CLAW-1998.pdf` | `7e2fadc9f5cd72444e9b7beb8d0e94c8d5c165d801ceb9a0fc60e90f59f59b33` |

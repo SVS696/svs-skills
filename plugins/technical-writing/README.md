@@ -7,7 +7,7 @@ Select the skill by the language of the deliverable. The language of the request
 | Russian requirements, technical specifications and procedures | [УТР](skills/utr/SKILL.md) | [ГОСТы и прикладной словарь](skills/utr/references/sources.md) |
 | English requirements, technical specifications and procedures | [Simplified Technical English](skills/simplified-technical-english/SKILL.md) | [ASD-STE100 Issue 9, IBM EasyEnglish and BCP 14](skills/simplified-technical-english/references/sources.md) |
 
-Copy either complete skill directory to your skills directory. To add the reference publications to that copy, run `python3 scripts/originals.py` from its root. Both skills build local Markdown in `standards/`. For Russian editions, install Poppler, Pillow, PyMuPDF, NumPy and opencv-python-headless. For English editions, install pdfplumber and PyMuPDF. The Issue 9 converter reads the tagged table cells in the publisher PDF. To verify the files without a network connection, run `python3 scripts/originals.py --check`.
+Copy either complete skill directory to your skills directory. To add the reference publications to that copy, run `python3 scripts/originals.py` from its root. Both skills build local Markdown in `standards/`. For Russian editions, install Poppler, Pillow, PyMuPDF, NumPy and opencv-python-headless. For English editions, install pdfplumber and PyMuPDF. Install Tesseract with English language data for the scanned CLAW paper. The Issue 9 converter reads the tagged table cells in the publisher PDF. To verify the files without a network connection, run `python3 scripts/originals.py --check`.
 
 ## Authoring and evaluation
 
